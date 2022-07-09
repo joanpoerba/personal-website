@@ -1,0 +1,1167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+:root{
+  --bg-home: white;
+  --navbar-bg:  rgba(231, 231, 231, 0.286);
+  --nav-color: black;
+  --nav-toggle-color: black;
+  --font-color: black;
+  --svg2-color: #efefef;
+  
+  --bg-about: #efefef;
+  --about-main-bg: rgba(0, 0, 0, 0.701);
+  
+  --projects-bg: #b5b5b5;
+  --svg3-color: #efefef;
+  
+  --bg-achievement: #2e2e2e81;
+  
+  scroll-behavior: smooth;
+}
+.darkMode{
+  --bg-home: rgb(40, 40, 40);
+  --navbar-bg:  rgba(104, 104, 104, 0.517);
+  --nav-color: white;
+  --nav-toggle-color: white;
+  --font-color: white;
+  --svg2-color: #444444;
+  
+  --bg-about: #444444;
+  --about-main-bg: rgba(155, 155, 155, 0.701);
+  
+  --projects-bg: #202020;
+  --svg3-color: #444444;
+  
+  --bg-achievement: #000000e1;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* scroll */
+*::-webkit-scrollbar{
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb{
+  background: rgb(164, 164, 164);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+a{
+  text-decoration: none;
+}
+/* scroll */
+
+body{
+  font-family: 'Poppins';
+}
+.menu{
+  width: 100%;
+  height: 800px;
+  color: var(--font-color);
+}
+span{
+  color: #ffa500;
+}
+
+/* home */
+
+.home{
+  background: var(--bg-home);
+}
+.home header{
+  position: fixed;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+}
+.home header ul{
+  display: none;
+  display: flex;
+  flex-direction: row;
+}
+.home header ul li{
+  margin: 0 40px;
+  list-style: none;
+}
+.home header ul li a{
+  color: var(--nav-color);
+  text-decoration: none;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.home header ul li a:hover{
+  color: orange;
+}
+.home header .navToggle{
+  display: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+.home header .navToggle .toggle{
+  width: 25px;
+  height: 2px;
+  background: var(--nav-toggle-color);
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+.home header .navToggle .toggle::after,
+.home header .navToggle .toggle::before{
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: var(--nav-toggle-color);
+  transition: all 0.5s ease;
+}
+.home header .navToggle .toggle::after{
+  content: ' ';
+  transform: translateY(-7px);
+}
+.home header .navToggle .toggle::before{
+  content: ' ';
+  transform: translateY(7px);
+}
+.home header .toggleWrapper{
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+.home main{
+  transform: translate(0, 70%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-transform: translate(0, 80%);
+  -moz-transform: translate(0, 70%);
+  -ms-transform: translate(0, 70%);
+  -o-transform: translate(0, 70%);
+}
+.home main .bioWrapper .titleWrapper .title{
+  font-weight: 600;
+}
+.home main .bioWrapper .wordWrapper{
+  margin-left: 50px;
+}
+.home main .bioWrapper .wordWrapper .word{
+  font-size: 14px;
+}
+.home main .bioWrapper .wordWrapper .contactWrapper i{
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+.home main .bioWrapper .wordWrapper .contactWrapper a{
+  color: var(--font-color);
+}
+.home main .photoWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home main .photoWrapper .quoteWrapper .quote{
+  font-family: 'Roboto Mono', monospace;
+}
+.home main .photoWrapper .svgWrapper{
+  position: absolute;
+  z-index: -90;
+}
+.home main .photoWrapper .svgWrapper .svg{
+  width: 400px;
+  animation-name: movingSvg;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes movingSvg {
+  from{
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+.home .svgWrapper2 .svg2{
+  margin-top: 225px;
+  fill: var(--svg2-color);
+}
+
+
+/* home */
+
+/* about */
+
+.about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-about);
+}
+.about main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--about-main-bg);
+  border-radius: 5px;
+  width: 1100px;
+  height: 500px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.about main .bannerWrapper .banner{
+  width: 250px;
+  background: rgba(45, 45, 45, 0.304);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.about main .aboutWordWrapper{
+  padding: 15px;
+  width: 600px;
+  background: rgba(45, 45, 45, 0.304);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.about main .aboutWordWrapper .aboutWord1{
+  font-size: 40px;
+}
+.about main .aboutWordWrapper .aboutWord1 .longWord{
+  letter-spacing: 10.5px;
+  animation-name: longWordAnimation;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 5s;
+}
+.about main .aboutWordWrapper .aboutWord2{
+  color: white;
+  font-size: 15px;
+}
+@keyframes longWordAnimation {
+  from{
+    letter-spacing: 0;
+    color: white;
+  }
+  to{
+    letter-spacing: 10.5px;
+    color: orange;
+  }
+}
+/* about */
+
+/* projects */
+
+.projects .svgWrapper3 .svg3{
+  fill: var(--svg3-color);
+  margin-top: -5px;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.projects{
+  background: var(--projects-bg);
+  overflow: hidden;
+}
+.projects main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.projects main .titleWrapper .title{
+  font-size: 4rem;
+}
+.projects main .titleWrapper .yearWrapper .year{
+  font-size: 17px;
+}
+.projects main .projectsWrapper{
+  overflow-y: scroll;
+  width: 400px;
+  height: 440px;
+}
+.projects main .projectsWrapper .projectsBox{
+  width: 370px;
+  height: 200px;
+  background: gray;
+  margin: 20px 0 0 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.projects main .projectsWrapper .project1{
+  background-image: url('assets/greating.jpg');
+  background-size: cover;
+}
+.projects main .projectsWrapper .project2{
+  background-image: url('assets/linkTree.jpg');
+  background-size: cover;
+}
+.projects main .projectsWrapper .project3{
+  background-image: url('assets/mathJs.jpg');
+  background-size: cover;
+}
+.projects main .projectsWrapper .project4{
+  background-image: url('assets/movingTxt.jpg');
+  background-size: cover;
+}
+
+/* projects */
+
+/* achievement */
+
+.achievement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-achievement);
+  overflow: hidden;
+}
+.achievement main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
+  height: 650px;
+}
+.achievement main .titleWrapper{
+  margin-top: 50px;
+}
+.achievement main .winWrapper{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.achievement main .winWrapper .winBox{
+  display: flex;
+  align-items: flex-end;
+  width: 500px;
+  height: 250px;
+  margin: 20px 0 0 0;
+}
+.achievement main .winWrapper .winBox1{
+  background-image: url('assets/wintempatpklmedan.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 90%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.achievement main .winWrapper .winBox2{
+  background-image: url('assets/winpostel.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.achievement .winWrapper .winBox .keterangan{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.567);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.achievement .winWrapper .winBox .keterangan .keteranganTxt{
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* achievement */
+
+
+
+
+/* 1292 */
+
+@media (max-width: 1292px){
+  .home main .photoWrapper .svgWrapper .svg{
+    width: 300px;
+    animation-name: movingSvg;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .home .svgWrapper2 .svg2{
+    margin-top: 280px;
+    fill: var(--svg2-color);
+  }
+}
+
+/* 1195 */
+
+@media (max-width: 1195px){
+  .about main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 900px;
+    height: 500px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 200px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+/* 1044 */
+
+@media (max-width: 1044px){
+  .home .svgWrapper2 .svg2{
+    margin-top: 320px;
+    fill: var(--svg2-color);
+  }
+}
+
+/* 1001 */
+
+@media (max-width: 1001px){
+  .home .svgWrapper2 .svg2{
+    margin-top: 360px;
+    fill: var(--svg2-color);
+  }
+  .home header{
+    position: absolute;
+    left: -300px;
+    position: fixed;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100vh;
+    background: var(--navbar-bg);
+    backdrop-filter: blur(13px);
+    transition: all .50s ease !important;
+  }
+  .home header .toggleWrapper{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+  }
+  .home header .navToggle{
+    display: block !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 7px;
+    left: 310px;
+  }
+  .home header.sidebar{
+    left: 0;
+  }
+  .home header.sidebar .navToggle .toggle::after{
+    transform: rotate(45deg);
+  }
+  .home header.sidebar .navToggle .toggle{
+    background: transparent;
+  }
+  .home header.sidebar .navToggle .toggle::before{
+    transform: rotate(-45deg);
+  }
+  .home header.sidebar .navToggle{
+    left: 260px;
+  }
+  .home header::before{
+    content: 'Joan Orlando Purba';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .home header ul{
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+  .home header ul li{
+    margin: 20px 0 0 0;
+    font-size: 15px;
+  }
+  .about main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 800px;
+    height: 480px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 180px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 500px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 30px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation-name: longWordAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 17px;
+  }
+}
+
+/* 863 */
+
+@media (max-width: 863px){
+  .home main .photoWrapper .svgWrapper .svg{
+    width: 200px;
+    animation-name: movingSvg;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .about main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 700px;
+    height: 400px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 180px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 400px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 30px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation-name: longWordAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 15px;
+  }
+  .projects main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .projects main .titleWrapper .title{
+    font-size: 3rem;
+  }
+  .projects main .projectsWrapper{
+    margin: 50px 0 0 0;
+    overflow-y: scroll;
+    width: 400px;
+    height: 400px;
+  }
+  .projects main .projectsWrapper .projectsBox{
+    width: 370px;
+    height: 200px;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+/* 751 */
+
+@media (max-width: 751px){
+  .about main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 600px;
+    height: 400px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 145px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 400px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 30px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation-name: longWordAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 15px;
+  }
+}
+
+/* 701 */
+
+@media (max-width: 701px){
+  .home main{
+    transform: translate(0, 20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform: translate(0, 20%);
+    -moz-transform: translate(0, 20%);
+    -ms-transform: translate(0, 20%);
+    -o-transform: translate(0, 20%);
+  }
+  .home main .photoWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 0 0;
+  }
+  .projects main .projectsWrapper{
+    margin: 50px 0 0 0;
+    overflow-y: scroll;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects main .projectsWrapper .projectsBox{
+    width: 300px;
+    height: 150px;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .achievement main .winWrapper .winBox{
+    display: flex;
+    align-items: flex-end;
+    width: 400px;
+    height: 200px;
+    margin: 20px 0 0 0;
+  }
+  .achievement .winWrapper .winBox .keterangan{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.567);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .achievement .winWrapper .winBox .keterangan .keteranganTxt{
+    color: white;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+/* 651 */
+
+@media (max-width: 651px){
+  .about main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 160px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 400px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 30px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation-name: longWordAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 15px;
+  }
+}
+
+/* 601 */
+
+@media (max-width: 601px){
+  .home main .photoWrapper .svgWrapper .svg{
+    width: 300px;
+    animation: none;
+    -webkit-animation: none;
+  }
+}
+
+/* 521 */
+
+@media (max-width: 521px){
+  .about{
+    padding: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--bg-about);
+  }
+  .about main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 400px;
+    height: 450px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 130px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 300px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 25px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation-name: longWordAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 13px;
+  }
+}
+
+/* 451 */
+
+@media (max-width: 451px){
+  .achievement main .titleWrapper .title{
+    font-size: 25px;
+  }
+}
+
+/* 431 */
+
+@media (max-width: 431px){
+  .about main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 300px;
+    height: 400px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 120px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 250px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 21px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation-name: longWordAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 5s;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 13px;
+  }
+  .projects main .titleWrapper .title{
+    font-size: 2rem;
+  }
+}
+
+/* 421 */
+
+@media (max-width: 421px){
+  .achievement main .winWrapper .winBox{
+    display: flex;
+    align-items: flex-end;
+    width: 300px;
+    height: 150px;
+    margin: 20px 0 0 0;
+  }
+  .achievement .winWrapper .winBox .keterangan{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.567);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .achievement .winWrapper .winBox .keterangan .keteranganTxt{
+    color: white;
+    font-size: 11px;
+    text-align: center;
+  }
+}
+
+/* 400 */
+
+@media (max-width: 400px){
+  .projects main .projectsWrapper{
+    margin: 50px 0 0 0;
+    overflow-y: scroll;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects main .projectsWrapper .projectsBox{
+    width: 250px;
+    height: 120px;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+/* 350 */
+
+@media (max-width: 350px){
+  .home main .bioWrapper .titleWrapper .title{
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .home main .bioWrapper .wordWrapper{
+    margin-left: 50px;
+  }
+  .home main .bioWrapper .wordWrapper .word{
+    font-size: 12px;
+  }
+  .home main .photoWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home main .photoWrapper .photo{
+    width: 250px;
+  }
+  .home main .photoWrapper .quoteWrapper .quote{
+    font-family: 'Roboto Mono', monospace;
+  }
+  .home main .photoWrapper .svgWrapper{
+    position: absolute;
+    z-index: -90;
+  }
+  .home main .photoWrapper .svgWrapper .svg{
+    animation: none;
+    -webkit-animation: none;
+  }
+  .about main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--about-main-bg);
+    border-radius: 5px;
+    width: 250px;
+    height: 450px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .bannerWrapper .banner{
+    width: 120px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper{
+    padding: 15px;
+    width: 200px;
+    background: rgba(45, 45, 45, 0.304);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .about main .aboutWordWrapper .aboutWord1{
+    font-size: 18px;
+  }
+  .about main .aboutWordWrapper .aboutWord1 .longWord{
+    letter-spacing: 1px;
+    animation: none;
+    -webkit-animation: none;
+  }
+  .about main .aboutWordWrapper .aboutWord2{
+    color: white;
+    font-size: 12px;
+  }
+  .projects main .projectsWrapper{
+    margin: 50px 0 0 0;
+    overflow-y: scroll;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects main .projectsWrapper .projectsBox{
+    width: 200px;
+    height: 100px;
+    margin: 20px 0 0 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .achievement main .titleWrapper .title{
+    font-size: 20px;
+  }
+  .achievement main .winWrapper .winBox{
+    display: flex;
+    align-items: flex-end;
+    width: 250px;
+    height: 150px;
+    margin: 20px 0 0 0;
+  }
+  .achievement .winWrapper .winBox .keterangan{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.567);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .achievement .winWrapper .winBox .keterangan .keteranganTxt{
+    color: white;
+    font-size: 10px;
+    text-align: center;
+  }
+}
